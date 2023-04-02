@@ -1,8 +1,2 @@
-src/
 vendor/
-bienesraices_crud.sql
 node_modules/
-gulpfile.js
-package.json
-package-lock.json
-includes/.env

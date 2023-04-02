@@ -71,25 +71,24 @@ class PaginasController {
             $respuestas = $_POST['contacto'];
 
             // Crear una instancia de PHPMailer
-            $mail = new PHPMailer();
+            $phpmailer = new PHPMailer();
 
             // Configurar SMTP
-            $mail->isSMTP();
-            $mail->Host = 'sandbox.smtp.mailtrap.io';
-            $mail->SMTPAuth = true;
-            $mail->Port = 2525;
-            $mail->Username = '08bd5ce466d67c';
-            $mail->Password = '94ec2771e4f8eb';
-            $mail->SMTPSecure = 'tls';
+            $phpmailer->isSMTP();
+            $phpmailer->Host = 'sandbox.smtp.mailtrap.io';
+            $phpmailer->SMTPAuth = true;
+            $phpmailer->Port = 2525;
+            $phpmailer->Username = 'b345255ffd7776';
+            $phpmailer->Password = '3382bdd9697836';
 
             // Configurar el contenido del mail
-            $mail->setFrom('admin@bienesraices.com');
-            $mail->addAddress('admin@bienesraices.com','BienesRaices.com');
-            $mail->Subject = 'Tienes un nuevo mensaje';
+            $phpmailer->setFrom($respuestas['email']);
+            $phpmailer->addAddress('admin@bienesraices.com','BienesRaices.com');
+            $phpmailer->Subject = 'Tienes un nuevo mensaje';
 
             // Habilitar HTML
-            $mail->isHTML(true);
-            $mail->CharSet = 'UTF-8';
+            $phpmailer->isHTML(true);
+            $phpmailer->CharSet = 'UTF-8';
             
             // Definir el contenido
             $contenido = '<html>';
@@ -111,14 +110,14 @@ class PaginasController {
 
             $contenido .= '</html>';
 
-            $mail->Body = $contenido;
-            $mail->AltBody = 'Esto es texto sin html';
+            $phpmailer->Body = $contenido;
+            $phpmailer->AltBody = 'Esto es texto sin html';
 
             // Enviar el mail
-            if ($mail->send()) {
+            if ($phpmailer->send()) {
                 $mensaje = "Mensaje enviado correctamente";
             } else  {
-                $mensaje = "El mensjae no se pudo enviar";
+                $mensaje = "El mensaje no se pudo enviar";
             }
         }
 

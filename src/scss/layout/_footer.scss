@@ -1,0 +1,22 @@
+.footer {
+    background-color: $grisOscuro;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 2rem 5rem;
+    @include desktop {
+        display: flex;
+        align-items: center;
+    }
+    .navegacion {
+        display: flex;
+        @include desktop {
+            flex-direction: row;
+            column-gap: 2rem;
+            justify-content: center;
+        }
+    }
+    .copyright {
+        color: $blanco;
+        width: 100%;
+    }
+}

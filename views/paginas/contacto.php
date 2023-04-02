@@ -46,7 +46,7 @@
                 <input type="radio" value="telefono" id="contactar-telefono" name="contacto[contacto]"></input>
 
                 <label for="contactar-email">Email</label>
-                <input type="radio" value="email" id="contactar-email" name="contacto[contacto]">
+                <input type="radio" value="email" id="contactar-email" name="contacto[contacto]" required>
             </div>
 
             <div id="contacto"></div>
